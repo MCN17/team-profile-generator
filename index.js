@@ -5,7 +5,7 @@ const addManager = () => {
 
         {
             type: "input", 
-            name: "managerName", 
+            name: "name", 
             message: "Please enter your Team Manager's name.",
             validate: managerNameInput => {
                 if (managerNameInput) {
@@ -18,7 +18,7 @@ const addManager = () => {
         }, 
         {
             type: "input", 
-            name: "employeeId", 
+            name: "id", 
             message: "Please enter your Team Manager's employee ID.",
             validate: employeeIdInput => {
                 if (employeeIdInput) {
@@ -74,7 +74,7 @@ const addEngineer = () => {
     return inquirer.prompt([
         {
             type: "input", 
-            name: "engineerName",
+            name: "name",
             message: "Please enter your Engineer's name.", 
             validate: engineerNameInput => {
                 if (engineerNameInput) {
@@ -87,7 +87,7 @@ const addEngineer = () => {
         }, 
         {
             type: "input", 
-            name: "engId", 
+            name: "id", 
             message: "Please enter your Engineer's emloyee ID.", 
             validate: engIdInput => {
                 if (engIdInput) {
@@ -100,7 +100,7 @@ const addEngineer = () => {
         }, 
         {
             type: "input", 
-            name: "engEmail", 
+            name: "email", 
             message: "Please enter your Engineer's email address.", 
             validate: engEmailInput => {
                 if (engEmailInput) {
@@ -113,7 +113,7 @@ const addEngineer = () => {
         }, 
         {
             type: "input", 
-            name: "engGitHub", 
+            name: "github", 
             message: "Please enter your Engineer's GitHub username.", 
             validate: engGitHubInput => {
                 if (engGitHubInput) {
@@ -132,7 +132,7 @@ const addIntern = () => {
 
         {
             type: "input", 
-            name: "intName", 
+            name: "name", 
             message: "Please enter your Intern's name.", 
             validate: intNameInput => {
                 if (intNameInput) {
@@ -145,7 +145,7 @@ const addIntern = () => {
         }, 
         {
             type: "input", 
-            name: "intId", 
+            name: "id", 
             message: "Please enter your Intern's employee ID", 
             vlidate: intIdInput => {
                 if (intIdInput) {
@@ -158,7 +158,7 @@ const addIntern = () => {
         }, 
         {
             type: "input", 
-            name: "intEmail", 
+            name: "email", 
             message: ("Please enter your Intern's email address."),
             validate: intEmailInput => {
                 if (intEmailInput) {
@@ -171,7 +171,7 @@ const addIntern = () => {
         }, 
         {
             type: "input", 
-            name: "intSchool", 
+            name: "school", 
             message: "Please enter the name of the school that your Intern is currently enrolled at.", 
             validate: intSchoolInput => {
                 if (intSchoolInput) {
@@ -184,7 +184,7 @@ const addIntern = () => {
         }
     ])
 }
-
+// addManager().then(answers => console.log(answers));
 // addManager()
 // .then(teamOption)
 // .then(addEngineer)
