@@ -46,7 +46,7 @@ const addManager = () => {
         }, 
         {
             type: "input", 
-            name: "officeNum", 
+            name: "officeNumber", 
             message: "Please enter your Team Manager's office number.", 
             validate: officeNumInput => {
                 if (officeNumInput) {
@@ -65,9 +65,9 @@ const teamOption = () => {
 
         {
             type: "list", 
-            name: "engOrInt", 
-            message: "Please select which member you'd like to add to your team.", 
-            choices: ["Engineer", "Intern"]
+            name: "role", 
+            message: "Would you like to add an Engineer, Intern or finish up?", 
+            choices: ["Engineer", "Intern", "Finish Up!"]
         }
     ])
 }
