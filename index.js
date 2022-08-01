@@ -1,3 +1,5 @@
+const fs = require('fs');
+const generatePage = require('./src/page-template');
 const inquirer = require("inquirer");
 
 const addManager = () => {
@@ -184,9 +186,17 @@ const addIntern = () => {
         }
     ])
 }
+
+
 // addManager().then(answers => console.log(answers));
-// addManager()
+addManager()
+.then(teamData => {
+    const pageHTML = generatePage(teamData);
+    fs.writeFile("./main.html", pageHTML, err => {
+        if (err) throw new Error(err);
+        console.log("Your Team Memeber page has been created!");
+    })
+})
 // .then(teamOption)
 // .then(addEngineer)
 // .then(addIntern)
-

@@ -1,7 +1,4 @@
-module.exports = (templateData) => {
-  console.log(templateData);
-  const { teamMembers, about, ...manager } = templateData;
-return `
+
 <!DOCTYPE html> 
 <html lang="en"> 
 <head>
@@ -10,7 +7,7 @@ return `
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Team Profile Generator</title>
+  <title>Team Profile</title>
 </head>
 
 <body>
@@ -23,18 +20,13 @@ return `
   <div class="card">
     <div class="card-body">
       <h5 class="card-title"></h5>
-      <p class="card-text">${manager.name}</p>
+      <p class="card-text">Marty</p>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">${manager.id}</li>
-      <li class="list-group-item">${manager.email}</li>
-      <li class="list-group-item">${manager.officeNum}</li>
+      <li class="list-group-item">17</li>
+      <li class="list-group-item">martynolan17@gmail.com</li>
+      <li class="list-group-item">45</li>
     </ul>
   </div>
 </div>    
 </body>
-`
-}
-
-// module.exports = generatePage
-
