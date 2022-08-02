@@ -3,6 +3,9 @@ const generatePage = require('./src/page-template');
 const inquirer = require("inquirer");
 
 const addManager = () => {
+    // if (!templateData.manager) {
+    //     templateData.manager = [];
+    // }
     return inquirer.prompt([
 
         {
@@ -57,10 +60,17 @@ const addManager = () => {
                 }
             }
         }
+     
     ])
+    .then(managerData => {
+        templateData = {};
+        templateData.manager = [];
+        templateData.manager.push(managerData);
+            return templateData;
+        })
 }
 
-const teamOption = () => {
+const teamOption = templateData => {
     return inquirer.prompt([
 
         {
@@ -69,10 +79,21 @@ const teamOption = () => {
             message: "Would you like to add an Engineer, Intern or finish up?", 
             choices: ["Engineer", "Intern", "Finish Up!"]
         }
+        
     ])
+    .then(answer => {
+        if(answer === "Engineer") {
+            return addEngineer(templateData);
+        } else if
+            (answer === "Intern") {
+                return addIntern(templateData);
+        } else {
+            return;
+        }
+    })
 }
 
-const addEngineer = () => {
+const addEngineer = (templateData) => {
     return inquirer.prompt([
         {
             type: "input", 
@@ -129,7 +150,7 @@ const addEngineer = () => {
     ])
 }
 
-const addIntern = () => {
+const addIntern = (templateData) => {
     return inquirer.prompt([
 
         {
