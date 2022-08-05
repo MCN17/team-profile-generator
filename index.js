@@ -60,16 +60,10 @@ const addManager = () => {
         }
      
     ])
-    .then(managerData => {
-        templateData = {};
-        templateData.manager = [];
-        templateData.manager.push(managerData);
-        return templateData
-          
-        })
+    .then(teamOption)
 }
 
-const teamOption = templateData => {
+const teamOption = () => {
     return inquirer.prompt([
 
         {
@@ -83,19 +77,17 @@ const teamOption = templateData => {
     .then(userChoice => {
         switch (userChoice.role) {
           case "Engineer":
-            addEngineer(templateData);
+            addEngineer();
             break;
           case "Intern":
-            addIntern(templateData);
-            break;
-          default: "Finish Up"
-          return templateData;  
+            addIntern();
+            break;  
         
         }
       });
 }
 
-const addEngineer = (templateData) => {
+const addEngineer = () => {
     return inquirer.prompt([
         {
             type: "input", 
@@ -150,15 +142,10 @@ const addEngineer = (templateData) => {
             }
         }
     ])
-    // .then(engineerData => {
-    //     templateData = {};
-    //     templateData.engineer = [];
-    //     templateData.engineer.push(engineerData);
-    //         return templateData;
-    //     })
+    .then(teamOption);
 }
 
-const addIntern = (templateData) => {
+const addIntern = () => {
     return inquirer.prompt([
 
         {
@@ -214,19 +201,30 @@ const addIntern = (templateData) => {
             }
         }
     ])
+    .then(teamOption);
 }
+
+addManager()
+
+
+
+
+
+
+
+
 
 
 // addManager().then(answers => console.log(answers));
-addManager()
+
 // .then(teamOption)
-.then(teamData => {
-    const pageHTML = generatePage(teamData);
-    fs.writeFile("./main.html", pageHTML, err => {
-        if (err) throw new Error(err);
-        console.log("Your Team Memeber page has been created!");
-    })
-})
+// .then(teamData => {
+//     const pageHTML = generatePage(teamData);
+//     fs.writeFile("./main.html", pageHTML, err => {
+//         if (err) throw new Error(err);
+//         console.log("Your Team Memeber page has been created!");
+//     })
+// })
 // .then(teamOption)
 // .then(addEngineer)
 // .then(addIntern)
