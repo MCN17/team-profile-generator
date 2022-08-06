@@ -1,6 +1,12 @@
 const fs = require('fs');
 const generatePage = require('./src/page-template');
 const inquirer = require("inquirer");
+const Employee = require("./lib/Employee");
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+
+const teamData = [];
 
 const addManager = () => {
    
@@ -60,7 +66,12 @@ const addManager = () => {
         }
      
     ])
-    .then(teamOption)
+    .then(answers => {
+        console.log(answers);
+        const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber)
+        teamData.push(manager);
+        teamOption();
+    })
 }
 
 const teamOption = () => {
@@ -81,7 +92,9 @@ const teamOption = () => {
             break;
           case "Intern":
             addIntern();
-            break;  
+            break; 
+            default:
+                 createTeam(); 
         
         }
       });
@@ -142,7 +155,12 @@ const addEngineer = () => {
             }
         }
     ])
-    .then(teamOption);
+    .then(answers => {
+        console.log(answers)
+        const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
+        teamData.push(engineer)
+        teamOption();
+    })
 }
 
 const addIntern = () => {
@@ -201,10 +219,24 @@ const addIntern = () => {
             }
         }
     ])
-    .then(teamOption);
+    .then(answers => {
+        console.log(answers);
+        const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
+        teamData.push(intern);
+        teamOption();
+    })
+}
+
+const createTeam = () => {
+    fs.writeFile("./main.html", generatePage(teamData), err => {
+        if (err) throw new Error(err);
+        console.log("Your Team Memeber page has been created!");
+    })
 }
 
 addManager()
+
+
 
 
 
