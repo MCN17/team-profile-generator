@@ -1,5 +1,6 @@
 const Employee = require("../lib/Employee")
 
+// Test for Employee
 test("creates an employee", () => {
     const employee = new Employee("Dan", "4", "rdnolan8@outlook.com")
 

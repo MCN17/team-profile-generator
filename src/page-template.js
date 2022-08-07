@@ -3,6 +3,7 @@ const createTeam = team => {
   console.log("help")
   const teamHTML = [];
 
+  // Template for Manager Card
   const generateManager = manager => {
     // console.log(manager);
     
@@ -23,6 +24,7 @@ const createTeam = team => {
     
   }
 
+  // Template for Engineer Card
   const generateEngineer = engineer => {
     console.log(engineer);
 
@@ -41,6 +43,7 @@ const createTeam = team => {
     `;
   }
 
+  // Template for Intern Card
   const generateIntern = intern => {
     console.log();
 
@@ -60,6 +63,8 @@ const createTeam = team => {
   }
   // teamHTML.push(managerArrHTML);
     // generateManager();
+
+    // Pushes each role's information into teamHTMl array.
     teamHTML.push(
       team
       .filter((employee) => employee.getRole() === "Manager")
@@ -87,6 +92,7 @@ const createTeam = team => {
 
 
 module.exports = team => {
+  // Template for entire html page.
   return `
   <!DOCTYPE html> 
   <html lang="en"> 

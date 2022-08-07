@@ -8,6 +8,7 @@ const Intern = require("./lib/Intern");
 
 const teamData = [];
 
+// Questions for Manager
 const addManager = () => {
    
     return inquirer.prompt([
@@ -74,6 +75,7 @@ const addManager = () => {
     })
 }
 
+// User chooses which role they want to add to their team profile webpage
 const teamOption = () => {
     return inquirer.prompt([
 
@@ -100,6 +102,7 @@ const teamOption = () => {
       });
 }
 
+// Questions for Engineer
 const addEngineer = () => {
     return inquirer.prompt([
         {
@@ -163,6 +166,7 @@ const addEngineer = () => {
     })
 }
 
+// Questions for Intern
 const addIntern = () => {
     return inquirer.prompt([
 
@@ -227,6 +231,7 @@ const addIntern = () => {
     })
 }
 
+// Function that generates the webpage
 const createTeam = () => {
     fs.writeFile("./main.html", generatePage(teamData), err => {
         if (err) throw new Error(err);

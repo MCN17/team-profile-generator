@@ -1,5 +1,6 @@
 const Engineer = require("../lib/Engineer")
 
+// Test for Engineer
 test("adds an engineer", () => {
     const engineer = new Engineer("Patrick", "7", "patrick@hotmail.com", "patricky89")
 

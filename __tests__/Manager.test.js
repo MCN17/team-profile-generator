@@ -1,5 +1,6 @@
 const Manager = require("../lib/Manager")
 
+// Test for Manager
 test("adds a manager", () => {
     const manager = new Manager("Connor", "5", "connor@gmail.com", "100")
 
