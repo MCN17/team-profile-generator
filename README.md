@@ -4,7 +4,7 @@
 https://drive.google.com/file/d/1BkOUjm0eZGTNXGn33mcyrW7PM4wrZxgC/view?usp=sharing
 
 ## Description
-Team Profile Generator uses node.js to generate a webpage with basic information about the employees in a company. It's perfect for an owner that wants quick access to information about his/her employees.
+Team Profile Generator uses node.js to generate a webpage with basic information about the company's employees based on user input. It's perfect for an owner who wants quick access to information about his/her employees.
 
 ## Installation
 To install this application you will need to type "npm install" in the command line.
