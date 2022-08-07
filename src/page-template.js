@@ -7,15 +7,15 @@ const createTeam = team => {
     // console.log(manager);
     
     return `
-    <div class="card col-3">
-      <div class="card-body">
-        <h5 class="card-title">${manager.name}</h5>
-        <p class="card-text">Manager</p>
+    <div class="card col-lg-2 col-sm-12 m-2 bg-primary">
+      <div class="card-body bg-primary">
+        <h2 class="card-title">${manager.name}</h2>
+        <p class="card-text h4">Manager</p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">ID: ${manager.id}</li>
-        <li class="list-group-item">Email: <a href="mailto:${manager.email}">${manager.email}</a></li>
-        <li class="list-group-item">Office#: ${manager.officeNumber}</li>
+        <li class="list-group-item h5">ID: ${manager.id}</li>
+        <li class="list-group-item h5">Email: <a href="mailto:${manager.email}">${manager.email}</a></li>
+        <li class="list-group-item h5 mb-2">Office#: ${manager.officeNumber}</li>
       </ul>
     </div>
     `;
@@ -27,15 +27,15 @@ const createTeam = team => {
     console.log(engineer);
 
     return `
-    <div class="card col-3">
-      <div class="card-body">
-        <h5 class="card-title">${engineer.name}</h5>
-        <p class="card-text">Engineer</p>
+    <div class="card col-lg-2 col-sm-12 m-2 bg-primary">
+      <div class="card-body bg-primary">
+        <h2 class="card-title">${engineer.name}</h2>
+        <p class="card-text h4">Engineer</p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">ID: ${engineer.id}</li>
-        <li class="list-group-item">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></li>
-        <li class="list-group-item">Github: <a href="https://github.com/${engineer.github}" target="_blank">${engineer.github}</a></li>
+        <li class="list-group-item h5">ID: ${engineer.id}</li>
+        <li class="list-group-item h5">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></li>
+        <li class="list-group-item h5 mb-2">Github: <a href="https://github.com/${engineer.github}" target="_blank">${engineer.github}</a></li>
       </ul>
     </div>
     `;
@@ -45,15 +45,15 @@ const createTeam = team => {
     console.log();
 
     return `
-    <div class="card col-3">
-      <div class="card-body">
-        <h5 class="card-title">${intern.name}</h5>
-        <p class="card-text">Intern</p>
+    <div class="card col-lg-2 col-sm-12 m-2 bg-primary">
+      <div class="card-body bg-primary">
+        <h2 class="card-title">${intern.name}</h2>
+        <p class="card-text h4">Intern</p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">ID: ${intern.id}</li>
-        <li class="list-group-item">Email: <a href="mailto:${intern.email}">${intern.email}</a></li>
-        <li class="list-group-item">School: ${intern.school}</li>
+        <li class="list-group-item h5">ID: ${intern.id}</li>
+        <li class="list-group-item h5">Email: <a href="mailto:${intern.email}">${intern.email}</a></li>
+        <li class="list-group-item h5 mb-2">School: ${intern.school}</li>
       </ul>
     </div>
     `;
@@ -100,12 +100,12 @@ module.exports = team => {
   </head>
   <div class="container-fluid">
   <body>
-      <header>
+      <header class="bg-danger mb-5 pt-2 pb-2">
           <h1 class="text-center">
               My Team
           </h1>
       </header>
-    <div class="row">
+    <div class="row d-flex justify-content-center">
     ${createTeam(team)}
     </div>
   </body>
