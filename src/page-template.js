@@ -7,15 +7,15 @@ const createTeam = team => {
     // console.log(manager);
     
     return `
-    <div class="card">
+    <div class="card col-3">
       <div class="card-body">
-        <h5 class="card-title"></h5>
-        <p class="card-text">${manager.name}</p>
+        <h5 class="card-title">${manager.name}</h5>
+        <p class="card-text">Manager</p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">${manager.id}</li>
-        <li class="list-group-item">${manager.email}</li>
-        <li class="list-group-item">${manager.officeNumber}</li>
+        <li class="list-group-item">ID: ${manager.id}</li>
+        <li class="list-group-item">Email: <a href="mailto:${manager.email}">${manager.email}</a></li>
+        <li class="list-group-item">Office#: ${manager.officeNumber}</li>
       </ul>
     </div>
     `;
@@ -27,15 +27,15 @@ const createTeam = team => {
     console.log(engineer);
 
     return `
-    <div class="card">
+    <div class="card col-3">
       <div class="card-body">
-        <h5 class="card-title"></h5>
-        <p class="card-text">${engineer.name}</p>
+        <h5 class="card-title">${engineer.name}</h5>
+        <p class="card-text">Engineer</p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">${engineer.id}</li>
-        <li class="list-group-item">${engineer.email}</li>
-        <li class="list-group-item">${engineer.officeNumber}</li>
+        <li class="list-group-item">ID: ${engineer.id}</li>
+        <li class="list-group-item">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></li>
+        <li class="list-group-item">Github: <a href="https://github.com/${engineer.github}" target="_blank">${engineer.github}</a></li>
       </ul>
     </div>
     `;
@@ -45,15 +45,15 @@ const createTeam = team => {
     console.log();
 
     return `
-    <div class="card">
+    <div class="card col-3">
       <div class="card-body">
-        <h5 class="card-title"></h5>
-        <p class="card-text">${intern.name}</p>
+        <h5 class="card-title">${intern.name}</h5>
+        <p class="card-text">Intern</p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">${intern.id}</li>
-        <li class="list-group-item">${intern.email}</li>
-        <li class="list-group-item">${intern.officeNumber}</li>
+        <li class="list-group-item">ID: ${intern.id}</li>
+        <li class="list-group-item">Email: <a href="mailto:${intern.email}">${intern.email}</a></li>
+        <li class="list-group-item">School: ${intern.school}</li>
       </ul>
     </div>
     `;
@@ -94,21 +94,22 @@ module.exports = team => {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./src/style.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Team Member Profile</title>
   </head>
-  
+  <div class="container-fluid">
   <body>
       <header>
           <h1 class="text-center">
               My Team
           </h1>
       </header>
-  <div class="row">
-    <div>${createTeam(team)}</div>
-  </div>    
+    <div class="row">
+    ${createTeam(team)}
+    </div>
   </body>
+  </div>
   `
 }
   
